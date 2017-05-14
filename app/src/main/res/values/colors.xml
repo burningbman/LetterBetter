@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="com_facebook_picker_place_image_size">64dp</dimen>
+    <color name="com_facebook_picker_search_bar_background">#f5f5f7</color>
+    <color name="com_facebook_picker_search_bar_text">#bcbdc2</color>
+    <color name="background">#327298</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="red">#ff0000</color>
+    <color name="three_letter_word">#ffffff</color>
+    <color name="four_letter_word">#dddddd</color>
+    <color name="five_letter_word">#aaaaaa</color>
+    <color name="six_letter_word">#888888</color>
+    <color name="seven_letter_word">#444444</color>
+    <color name="eight_letter_word">#111111</color>
+    <color name="menu_text">#28546d</color>
+</resources>

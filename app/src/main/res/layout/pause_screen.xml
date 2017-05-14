@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_fragment"
+    android:layout_centerInParent="true">
+
+    <TextView
+        android:id="@+id/textViewGamePaused"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/game_paused"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="@dimen/text_size_menu"
+        android:textColor="@color/menu_text"
+        android:layout_centerHorizontal="true"
+        android:gravity="top"
+        android:layout_marginBottom="@dimen/padding_word_table_side"
+        android:layout_marginTop="@dimen/padding_main_menu_sign_out_bottom" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sound"
+        android:id="@+id/radioButtonSound"
+        android:layout_gravity="center_horizontal"
+        android:textSize="@dimen/text_size_menu"
+        android:textColor="@color/menu_text"
+        android:layout_below="@+id/textViewGamePaused"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/padding_main_menu_sign_out_bottom" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/music"
+        android:id="@+id/radioButtonMusic"
+        android:layout_gravity="center_horizontal"
+        android:textSize="@dimen/text_size_menu"
+        android:textColor="@color/menu_text"
+        android:layout_below="@+id/radioButtonSound"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/padding_main_menu_sign_out_bottom" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radioButtonMusic"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/button_main_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_custom1"
+            android:textColor="@color/menu_text"
+            android:textSize="@dimen/text_size_menu"
+            android:text="@string/main_menu" />
+
+        <Button
+            android:id="@+id/button_resume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_custom1"
+            android:textColor="@color/menu_text"
+            android:textSize="@dimen/text_size_menu"
+            android:text="@string/resume"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

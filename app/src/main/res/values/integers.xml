@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<integer name="num_tiles">4</integer>
+	<integer name="timer_length">60</integer>
+	<integer name="achievement_wordsmith_points">40</integer>
+	<integer name="max_row_count">6</integer>
+	<integer name="row_margin">10</integer>
+	<integer name="powerup_time_increment">10</integer>
+	<integer name="tile_text_size">40</integer>
+</resources>

@@ -1,0 +1,36 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="board_size">312dp</dimen>
+	<dimen name="letter_size">100dp</dimen>
+	<dimen name="score_label_width">45dp</dimen>
+	<dimen name="time_label_width">40dp</dimen>
+	<dimen name="score_width">25dp</dimen>
+	<dimen name="board_padding">2dp</dimen>
+	<dimen name="submitted_words_height">55dp</dimen>
+	<dimen name="drag_zone_width">20dp</dimen>
+	<dimen name="bottom_padding">10dp</dimen>
+	<dimen name="button_singleplayer_width">200dp</dimen>
+	<dimen name="button_multiplayer_invite_width">300dp</dimen>
+	<dimen name="button_multiplayer_random_width">300dp</dimen>
+	<dimen name="button_inbox_width">150dp</dimen>
+	<dimen name="button_achievements_width">200dp</dimen>
+	<dimen name="button_letter_bank_width">200dp</dimen>
+	<dimen name="button_main_menu_height">30dp</dimen>
+	<dimen name="button_resume_width">80dp</dimen>
+	<dimen name="button_main_menu_width">130dp</dimen>
+	<dimen name="button_leaderboard_width">170dp</dimen>
+	<dimen name="padding_powerup">27dp</dimen>
+	<dimen name="padding_word_table_side">25dp</dimen>
+	<dimen name="padding_word_table_top">26dp</dimen>
+	<dimen name="space_main_menu_top">230dp</dimen>
+	<dimen name="padding_main_menu_bank_left">125dp</dimen>
+	<dimen name="padding_main_menu_bank_bottom">19dp</dimen>
+	<dimen name="padding_main_menu_sign_out_bottom">10dp</dimen>
+	<dimen name="padding_main_menu_sign_out_right">20dp</dimen>
+	<dimen name="game_screen_text_top_height">20dp</dimen>
+	<dimen name="padding_game_screen_time_top">17dp</dimen>
+	<dimen name="text_size_menu">20sp</dimen>
+</resources>

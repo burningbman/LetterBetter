@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_column="1"
+    android:layout_row="0"
+    android:background="@drawable/bg_game"
+    android:columnCount="4"
+    android:dividerPadding="@dimen/board_padding"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/score_and_time_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:paddingTop="@dimen/padding_game_screen_time_top" >
+
+        <TextView
+            android:id="@+id/textViewLetterBankLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="@dimen/board_padding"
+            android:text="@string/bank"
+            android:textSize="@dimen/game_screen_text_top_height"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/textViewLetterBankCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/game_screen_text_top_height"
+            android:textColor="@color/white"
+            android:paddingRight="@dimen/bottom_padding" />
+
+        <TextView
+            android:id="@+id/time_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="@dimen/board_padding"
+            android:textColor="@color/white"
+            android:text="@string/time"
+            android:textSize="@dimen/game_screen_text_top_height" />
+        
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/game_screen_text_top_height"
+            android:textColor="@color/white"
+            android:paddingRight="@dimen/bottom_padding" />
+
+        <TextView
+            android:id="@+id/score_label"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingRight="@dimen/board_padding"
+            android:text="@string/score"
+            android:textSize="@dimen/game_screen_text_top_height"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/game_screen_text_top_height"
+            android:textColor="@color/white"
+            android:paddingRight="@dimen/bottom_padding" />
+
+        <Button
+            android:id="@+id/pause"
+            android:layout_height="@dimen/game_screen_text_top_height"
+            android:layout_width="@dimen/game_screen_text_top_height"
+            android:background="@drawable/button_pause"
+            android:clickable="true"
+            android:onClick="pauseClicked" />
+
+    </LinearLayout>
+
+    <TableLayout
+        android:id="@+id/table_submitted_words"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/score_and_time_layout"
+        android:gravity="left"
+        android:minHeight="150dp"
+        android:paddingTop="@dimen/padding_word_table_top"
+        android:paddingLeft="@dimen/padding_word_table_side"
+        android:paddingRight="@dimen/padding_word_table_side"
+        android:shrinkColumns="true"
+        android:stretchColumns="true" >
+    </TableLayout>
+
+    <LinearLayout
+        android:id="@+id/powerup_layout"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/padding_powerup"
+        android:layout_marginLeft="@dimen/bottom_padding"
+        android:layout_marginTop="@dimen/board_padding"
+        android:layout_above="@+id/board_layout"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/buttonPowerupTime"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="36dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/bottom_padding"
+            android:background="@drawable/button_powerup_time"
+            android:onClick="onPowerupClicked"
+            android:paddingRight="@dimen/score_width" />
+
+        <Button
+            android:id="@+id/buttonPowerupSwap"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="36dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/bottom_padding"
+            android:background="@drawable/button_powerup_swap"
+            android:onClick="onPowerupClicked"
+            android:paddingRight="@dimen/score_width" />
+
+        <Button
+            android:id="@+id/buttonPowerupVowel"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="36dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/bottom_padding"
+            android:background="@drawable/button_powerup_vowel"
+            android:onClick="onPowerupClicked"
+            android:paddingRight="@dimen/score_width" />
+
+        <Button
+            android:id="@+id/buttonPowerupShuffle"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_height="match_parent"
+            android:layout_width="36dp"
+            android:background="@drawable/button_powerup_shuffle"
+            android:onClick="onPowerupClicked" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/board_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/bottom_padding"
+        android:paddingLeft="@dimen/bottom_padding"
+        android:paddingRight="@dimen/bottom_padding" >
+
+        <LinearLayout
+            android:id="@+id/row0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <com.cor31.widget.LetterButton
+                android:id="@+id/tile0"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/board_padding"
+                android:layout_weight="1"
+                android:maxHeight="@dimen/letter_size"
+                android:maxWidth="@dimen/letter_size"
+                custom:xIndex="0"
+                custom:yIndex="0" />
+
+            <com.cor31.widget.LetterButton
+                android:id="@+id/tile1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/board_padding"
+                android:layout_weight="1"
+                android:maxHeight="@dimen/letter_size"
+                android:maxWidth="@dimen/letter_size"
+                custom:xIndex="1"
+                custom:yIndex="0" />
+
+            <com.cor31.widget.LetterButton
+                android:id="@+id/tile2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/board_padding"
+                android:layout_weight="1"
+                android:maxHeight="@dimen/letter_size"
+                android:maxWidth="@dimen/letter_size"
+                custom:xIndex="2"
+                custom:yIndex="0" />
+
+            <com.cor31.widget.LetterButton
+                android:id="@+id/tile3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/board_padding"
+                android:layout_weight="1"
+                android:maxHeight="@dimen/letter_size"
+                android:maxWidth="@dimen/letter_size"
+                custom:xIndex="3"
+                custom:yIndex="0" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/row1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <com.cor31.widget.LetterButton
+                android:id="@+id/tile4"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/board_padding"
+                android:layout_weight="1"
+                android:maxHeight="@dimen/letter_size"
+                android:maxWidth="@dimen/letter_size"
+                custom:xIndex="0"
+                custom:yIndex="1" />
+
+            <com.cor31.widget.LetterButton
+                android:id="@+id/tile5"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/board_padding"
+                android:layout_weight="1"
+                android:maxHeight="@dimen/letter_size"
+                android:maxWidth="@dimen/letter_size"
+                custom:xIndex="1"
+                custom:yIndex="1" />
+
+            <com.cor31.widget.LetterButton
+                android:id="@+id/tile6"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/board_padding"
+                android:layout_weight="1"
+                android:maxHeight="@dimen/letter_size"
+                android:maxWidth="@dimen/letter_size"
+                custom:xIndex="2"
+                custom:yIndex="1" />
+
+            <com.cor31.widget.LetterButton
+                android:id="@+id/tile7"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/board_padding"
+                android:layout_weight="1"
+                android:maxHeight="@dimen/letter_size"
+                android:maxWidth="@dimen/letter_size"
+                custom:xIndex="3"
+                custom:yIndex="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/row2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <com.cor31.widget.LetterButton
+                android:id="@+id/tile8"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/board_padding"
+                android:layout_weight="1"
+                android:maxHeight="@dimen/letter_size"
+                android:maxWidth="@dimen/letter_size"
+                custom:xIndex="0"
+                custom:yIndex="2" />
+
+            <com.cor31.widget.LetterButton
+                android:id="@+id/tile9"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/board_padding"
+                android:layout_weight="1"
+                android:maxHeight="@dimen/letter_size"
+                android:maxWidth="@dimen/letter_size"
+                custom:xIndex="1"
+                custom:yIndex="2" />
+
+            <com.cor31.widget.LetterButton
+                android:id="@+id/tile10"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/board_padding"
+                android:layout_weight="1"
+                android:maxHeight="@dimen/letter_size"
+                android:maxWidth="@dimen/letter_size"
+                custom:xIndex="2"
+                custom:yIndex="2" />
+
+            <com.cor31.widget.LetterButton
+                android:id="@+id/tile11"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/board_padding"
+                android:layout_weight="1"
+                android:maxHeight="@dimen/letter_size"
+                android:maxWidth="@dimen/letter_size"
+                custom:xIndex="3"
+                custom:yIndex="2" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/row3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <com.cor31.widget.LetterButton
+                android:id="@+id/tile12"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/board_padding"
+                android:layout_weight="1"
+                android:maxHeight="@dimen/letter_size"
+                android:maxWidth="@dimen/letter_size"
+                custom:xIndex="0"
+                custom:yIndex="3" />
+
+            <com.cor31.widget.LetterButton
+                android:id="@+id/tile13"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/board_padding"
+                android:layout_weight="1"
+                android:maxHeight="@dimen/letter_size"
+                android:maxWidth="@dimen/letter_size"
+                custom:xIndex="1"
+                custom:yIndex="3" />
+
+            <com.cor31.widget.LetterButton
+                android:id="@+id/tile14"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/board_padding"
+                android:layout_weight="1"
+                android:maxHeight="@dimen/letter_size"
+                android:maxWidth="@dimen/letter_size"
+                custom:xIndex="2"
+                custom:yIndex="3" />
+
+            <com.cor31.widget.LetterButton
+                android:id="@+id/tile15"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/board_padding"
+                android:layout_weight="1"
+                android:maxHeight="@dimen/letter_size"
+                android:maxWidth="@dimen/letter_size"
+                custom:xIndex="3"
+                custom:yIndex="3" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

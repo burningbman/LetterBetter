@@ -1,0 +1,129 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_menu_bg"
+    android:orientation="vertical"
+    android:textAlignment="center" >
+
+    <Space
+        android:id="@+id/space"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_main_menu_top" />
+
+    <Button
+        android:id="@+id/newGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/bottom_padding"
+        android:layout_below="@id/space"
+        android:layout_centerInParent="true"
+        android:enabled="true"
+        android:onClick="startSingleplayerGame"
+        android:paddingBottom="@dimen/bottom_padding"
+        android:paddingTop="@dimen/bottom_padding"
+        android:scrollHorizontally="false"
+        android:text="@string/singleplayer"
+        android:textSize="@dimen/text_size_menu"
+        android:textColor="@color/menu_text"
+        android:background="@drawable/button_custom1" />
+
+    <Button
+        android:id="@+id/buttonMultiplayerInvite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/bottom_padding"
+        android:layout_below="@id/newGame"
+        android:layout_centerInParent="true"
+        android:background="@drawable/button_custom1"
+        android:textColor="@color/menu_text"
+        android:text="@string/multiplayer_game"
+        android:onClick="startInviteMultiplayerGame"
+        android:paddingBottom="@dimen/bottom_padding"
+        android:textSize="@dimen/text_size_menu"
+        android:paddingTop="@dimen/bottom_padding" />
+    
+    <!--<Button
+        android:id="@+id/buttonMultiplayerRandom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/bottom_padding"
+        android:layout_below="@id/buttonMultiplayerInvite"
+        android:layout_centerInParent="true"
+        android:background="@drawable/button_multiplayer_random"
+        android:onClick="startRandomMultiplayerGame"
+        android:paddingBottom="@dimen/bottom_padding"
+        android:paddingTop="@dimen/bottom_padding" />-->
+    
+    <Button
+        android:id="@+id/buttonInbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/bottom_padding"
+        android:layout_below="@id/buttonMultiplayerInvite"
+        android:layout_centerInParent="true"
+        android:background="@drawable/button_custom1"
+        android:onClick="onInvitationInboxOpened"
+        android:paddingBottom="@dimen/bottom_padding"
+        android:textColor="@color/menu_text"
+        android:text="@string/invitations"
+        android:textSize="@dimen/text_size_menu"
+        android:paddingTop="@dimen/bottom_padding" />
+    
+    <Button
+        android:id="@+id/buttonAchievements"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/bottom_padding"
+        android:layout_below="@id/buttonInbox"
+        android:layout_centerInParent="true"
+        android:background="@drawable/button_custom1"
+        android:onClick="openAchievements"
+        android:textColor="@color/menu_text"
+        android:text="@string/achievements"
+        android:paddingBottom="@dimen/bottom_padding"
+        android:textSize="@dimen/text_size_menu"
+        android:paddingTop="@dimen/bottom_padding" />
+
+    <!--<Button
+        android:id="@+id/buttonLetterShop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonAchievements"
+        android:layout_centerInParent="true"
+        android:paddingBottom="@dimen/bottom_padding"
+        android:paddingTop="@dimen/bottom_padding"
+        android:background="@drawable/button_letter_shop" />-->
+        
+	<!-- sign-in button -->
+	<com.google.android.gms.common.SignInButton
+	    android:id="@+id/sign_in_button"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentBottom="true"
+	    android:layout_alignParentRight="true"
+	    android:layout_marginRight="@dimen/padding_main_menu_sign_out_right"
+	    android:layout_marginBottom="@dimen/padding_main_menu_sign_out_bottom"
+	    android:visibility="gone" />
+       
+	<!-- sign-out button -->
+	<Button
+	    android:id="@+id/sign_out_button"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+	    android:background="@drawable/button_sign_out"
+	    android:layout_marginEnd="@dimen/padding_main_menu_sign_out_right"
+	    android:layout_marginBottom="@dimen/padding_main_menu_sign_out_bottom"	    
+	    android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/textViewLetterBankCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="@dimen/padding_main_menu_bank_bottom"
+        android:paddingLeft="@dimen/padding_main_menu_bank_left"
+        android:textColor="@color/background" />
+
+   </RelativeLayout>
